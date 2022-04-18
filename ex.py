@@ -13,15 +13,25 @@
 # print(len(lotto) < 6)
 
 
-def hanoi(n, s=1, e=3):
-    if n:
-        hanoi(n - 1, s, 6 - s - e)
-        print(s, e)
-        hanoi(n - 1, 6 - s - e, e)
+# def hanoi(n, s=1, e=3):
+#     if n:
+#         hanoi(n - 1, s, 6 - s - e)
+#         print(s, e)
+#         hanoi(n - 1, 6 - s - e, e)
+#
+#
+# n = int(input())
+# cnt = (2 ** n) - 1
+# print(cnt)
+# if n < 21:
+#     hanoi(n)
 
 
-n = int(input())
-cnt = (2 ** n) - 1
-print(cnt)
-if n < 21:
-    hanoi(n)
+s = 'A man, a plan, a canal: Panama'
+s = s.lower()
+print(s)
+
+import re
+s = re.sub('[^a-z0-9]', '', s)
+print(s)
+print(s[::-1])

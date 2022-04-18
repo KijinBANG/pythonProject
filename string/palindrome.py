@@ -13,3 +13,45 @@
 입력: race a car
 출력: false
 '''
+# list 를 이용한 해결
+# class Solution:
+#     def isPalindrome(self, s) -> bool:
+#         strs = []
+#         for char in s:
+#             if char.isalnum():
+#                 strs.append(char.lower())
+#         while len(strs) > 1:
+#             if strs.pop(0) != strs.pop():
+#                 return False
+#         return True
+
+
+# Deque 를 이용한 해결
+# import collections
+# from typing import Deque
+# class Solution:
+#     def isPalindrome(self, s) -> bool:
+#         # 자료형 데크로 선언
+#         strs: Deque = collections.deque()
+#         for char in s:
+#             if char.isalnum():
+#                 strs.append(char.lower())
+#         while len(strs) > 1:
+#             if strs.popleft() != strs.pop():
+#                 return False
+#         return True
+
+
+# 정규식과 슬라이싱을 이용한 해결
+import re
+class Solution:
+    def isPalindrome(self, s) -> bool:
+        s = s.lower()
+        s = re.sub('[^a-z0-9]', '', s)
+
+        return s == s[::-1]
+
+
+solution = Solution()
+print(solution.isPalindrome('A man, a plan, a canal: Panama'))
+print(solution.isPalindrome('race a car'))
