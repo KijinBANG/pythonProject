@@ -27,11 +27,30 @@
 #     hanoi(n)
 
 
-s = 'A man, a plan, a canal: Panama'
-s = s.lower()
-print(s)
+# s = 'A man, a plan, a canal: Panama'
+# s = s.lower()
+# print(s)
 
-import re
-s = re.sub('[^a-z0-9]', '', s)
-print(s)
-print(s[::-1])
+# import re
+# s = re.sub('[^a-z0-9]', '', s)
+# print(s)
+# print(s[::-1])
+
+
+# words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+# for word in words:
+#     print(''.join(sorted(word)))
+
+
+# li = list(range(1, 10))
+# print(li[0])
+#
+# stack = []
+# print('result: ', '' + stack.pop)
+
+from re import match
+
+sample = 'hong@abc12.com'
+
+result = match('^[a-z][0-9a-zA-Z]{3,}@[a-z][0-9a-zA-Z]{2,}.[0-9a-zA-Z]{,3}', sample)
+print(result)
